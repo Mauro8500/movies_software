@@ -1,0 +1,31 @@
+###
+GET http://localhost:8080/administrador/peliculas
+Accept: application/json
+
+###
+GET http://localhost:8080/administrador/peliculas/5
+Accept: application/json
+
+###
+POST http://localhost:8080/administrador/peliculas
+Content-Type: application/json
+
+{
+  "nombre": "Star Wars",
+  "descripcion": "En una galaxia muy muy lejana...",
+  "precio": 20,
+  "disponibilidad": 200,
+  "status": 1
+}
+
+###
+PUT http://localhost:8080/administrador/peliculas/6
+Content-Type: application/json
+
+{
+  "nombre": "Star Wars",
+  "descripcion": "En una galaxia muy muy lejana...",
+  "precio": 20,
+  "disponibilidad": 100,
+  "status": 1
+}
