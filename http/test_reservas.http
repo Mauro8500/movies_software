@@ -1,0 +1,16 @@
+###
+GET http://localhost:8080/reservas/administrador
+Accept: application/json
+
+###
+POST http://localhost:8080/reservas/clientes
+Content-Type: application/json
+
+{
+  "numReservas": 2,
+  "metodotarjeta": 1,
+  "metodoefectivo": "No",
+  "peliculasIdpeli": 4,
+  "clientesIdcli": 2,
+  "pickupsIdpickups": 1
+}
