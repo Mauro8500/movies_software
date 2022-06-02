@@ -2,6 +2,7 @@ package bo.edu.ucb.ingsoft.movie_backend.api;
 
 import bo.edu.ucb.ingsoft.movie_backend.bl.AdministradorBl;
 import bo.edu.ucb.ingsoft.movie_backend.bl.ClientesBl;
+import bo.edu.ucb.ingsoft.movie_backend.entities.Cliente;
 import bo.edu.ucb.ingsoft.movie_backend.entities.ClientesEntity;
 import bo.edu.ucb.ingsoft.movie_backend.entities.PeliculasEntity;
 import org.slf4j.Logger;
@@ -27,9 +28,9 @@ public class ClientesAPI {
     }
 
     @GetMapping("clientes/{idcli}")
-    public ResponseEntity<ClientesEntity> obtenerClientePorID(@PathVariable Integer idcli){
+    public ResponseEntity<Cliente> obtenerClientePorID(@PathVariable Integer idcli){
         LOGGER.info("Metodo obtenerClientePorID desde ClientesAPI");
-        ClientesEntity cliente = this.clientesBl.obtenerCliente(idcli);
-        return new ResponseEntity<ClientesEntity>(cliente, HttpStatus.OK);
+        Cliente cliente = this.clientesBl.obtenerCliente(idcli);
+        return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
     }
 }

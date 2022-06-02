@@ -1,4 +1,5 @@
 ###
+#crea un nuevo cliente
 POST http://localhost:8080/clientes
 Content-Type: application/json
 
@@ -10,5 +11,6 @@ Content-Type: application/json
 }
 
 ###
+#auth cliente
 GET http://localhost:8080/clientes/2
 Accept: application/json

@@ -1,6 +1,7 @@
 package bo.edu.ucb.ingsoft.movie_backend.api;
 
 import bo.edu.ucb.ingsoft.movie_backend.bl.AdministradorBl;
+import bo.edu.ucb.ingsoft.movie_backend.entities.CategoriaEntity;
 import bo.edu.ucb.ingsoft.movie_backend.entities.PeliculasEntity;
 import bo.edu.ucb.ingsoft.movie_backend.entities.ReservasEntity;
 import org.slf4j.Logger;
@@ -62,5 +63,11 @@ public class AdministradorAPI {
         LOGGER.info("Metodo obtenerPickups desde AdministradoAPI");
         this.administradorBl.borrarPelicula(idpeli);
         return new ResponseEntity<String>("Pelicula borrada satisfactoriamente.", HttpStatus.OK);
+    }
+    @PostMapping("categoria")
+    public ResponseEntity<CategoriaEntity> agregarCategoria(@RequestBody CategoriaEntity categoriaEntity){
+        LOGGER.info("Metodo agregarPeliculas desde AdministradoAPI");
+        CategoriaEntity agregarCategoria=this.administradorBl.agregarCategoria(categoriaEntity);
+        return new ResponseEntity<CategoriaEntity>(agregarCategoria, HttpStatus.OK);
     }
 }

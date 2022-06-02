@@ -7,7 +7,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - '5432:5432'
+      - '5450:5432'
     volumes:
       - db:/var/lib/postgresql/data
       - ./db/peliculas_create.sql:/docker-entrypoint-initdb.d/peliculas_create.sql.sql

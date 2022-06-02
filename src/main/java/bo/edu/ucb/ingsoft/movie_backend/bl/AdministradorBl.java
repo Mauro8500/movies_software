@@ -1,8 +1,10 @@
 package bo.edu.ucb.ingsoft.movie_backend.bl;
 
 import bo.edu.ucb.ingsoft.movie_backend.api.AdministradorAPI;
+import bo.edu.ucb.ingsoft.movie_backend.dao.CategoriaRepository;
 import bo.edu.ucb.ingsoft.movie_backend.dao.PeliculasRepository;
 import bo.edu.ucb.ingsoft.movie_backend.dao.ReservasRepository;
+import bo.edu.ucb.ingsoft.movie_backend.entities.CategoriaEntity;
 import bo.edu.ucb.ingsoft.movie_backend.entities.PeliculasEntity;
 import bo.edu.ucb.ingsoft.movie_backend.entities.ReservasEntity;
 import org.slf4j.Logger;
@@ -16,13 +18,14 @@ import java.util.List;
 public class AdministradorBl {
     private PeliculasRepository peliculasRepository;
     private ReservasRepository reservasRepository;
-
+    private CategoriaRepository categoriaRepository;
     Logger LOGGER = LoggerFactory.getLogger(AdministradorBl.class);
 
 
-    public AdministradorBl(PeliculasRepository peliculasRepository,ReservasRepository reservasRepository) {
+    public AdministradorBl(PeliculasRepository peliculasRepository,ReservasRepository reservasRepository, CategoriaRepository categoriaRepository) {
         this.peliculasRepository = peliculasRepository;
         this.reservasRepository = reservasRepository;
+        this.categoriaRepository = categoriaRepository;
     }
 
     public PeliculasEntity agregarPelicula(PeliculasEntity peliculasEntity) {
@@ -64,5 +67,10 @@ public class AdministradorBl {
     public void borrarPelicula(Integer idpeli) {
         LOGGER.info("Metodo borrarPelicula desde AdministradorBl");
         this.peliculasRepository.eliminarPelicula(idpeli);
+    }
+
+    public CategoriaEntity agregarCategoria(CategoriaEntity categoriaEntity) {
+        LOGGER.info("Metodo agregarCategoria desde AdministradorBl");
+        return this.categoriaRepository.save(categoriaEntity);
     }
 }

@@ -1,6 +1,7 @@
 package bo.edu.ucb.ingsoft.movie_backend.bl;
 
 import bo.edu.ucb.ingsoft.movie_backend.dao.ClientesRespository;
+import bo.edu.ucb.ingsoft.movie_backend.entities.Cliente;
 import bo.edu.ucb.ingsoft.movie_backend.entities.ClientesEntity;
 import bo.edu.ucb.ingsoft.movie_backend.entities.PeliculasEntity;
 import org.slf4j.Logger;
@@ -22,9 +23,11 @@ public class ClientesBl {
         this.clientesRespository.save(clientesEntity);
     }
 
-    public ClientesEntity obtenerCliente(Integer idcli) {
+    public Cliente obtenerCliente(Integer idcli) {
         LOGGER.info("Metodo obtenerCliente desde ClientesBl");
-        return this.clientesRespository.obtenerClientePorID(idcli);
+        ClientesEntity clientesEntity = this.clientesRespository.obtenerClientePorID(idcli);
+        Cliente cliente = new Cliente(clientesEntity.getIdcli(),clientesEntity.getNombre(),clientesEntity.getApellido());
+        return cliente;
     }
 
 

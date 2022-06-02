@@ -1,5 +1,6 @@
 package bo.edu.ucb.ingsoft.movie_backend.dao;
 
+import bo.edu.ucb.ingsoft.movie_backend.entities.Cliente;
 import bo.edu.ucb.ingsoft.movie_backend.entities.ClientesEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
