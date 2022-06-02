@@ -31,3 +31,4 @@ Accept: application/json
 ###
 #busqueda por categoria
 GET http://localhost:8080/catalogo/peliculas?categoria=Suspenso
+

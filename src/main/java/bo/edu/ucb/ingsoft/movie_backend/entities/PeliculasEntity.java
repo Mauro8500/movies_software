@@ -1,12 +1,13 @@
 package bo.edu.ucb.ingsoft.movie_backend.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
 @Table(name = "peliculas", schema = "public", catalog = "postgres")
-public class PeliculasEntity {
+public class PeliculasEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "idpeli", nullable = false)

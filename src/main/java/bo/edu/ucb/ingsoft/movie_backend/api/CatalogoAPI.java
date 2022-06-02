@@ -30,10 +30,6 @@ public class CatalogoAPI {
         LOGGER.info("Metodo obtenerPeliculasPorActorONombreOCategoria desde CatalogoAPI");
         List<PeliculasEntity> listaPeliculas=null;
 
-        System.out.println("pelicula es: "+pelicula);
-        System.out.println("actor es: "+actor);
-        System.out.println("categoria es: "+categoria);
-
         if(pelicula!=null && actor!=null && categoria!=null){
             listaPeliculas = this.catalogoBl.obtenerPeliculaPorActorYNombreYCategoria(actor,pelicula,categoria);
         }else if (pelicula!=null && actor!=null && categoria==null) {
@@ -50,5 +46,7 @@ public class CatalogoAPI {
 
         return new ResponseEntity<>(listaPeliculas, HttpStatus.OK);
     }
+
+
 
 }
